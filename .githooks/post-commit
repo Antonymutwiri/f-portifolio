@@ -1,0 +1,31 @@
+#!/bin/sh
+# Post-commit hook: push commit to remote and notify Coolify via webhook.
+# Configure by creating a `.coolify.env` file in the repo root (see .coolify.env.example).
+
+REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null || pwd)
+
+# Load user configuration if present
+if [ -f "$REPO_ROOT/.coolify.env" ]; then
+  # shellcheck disable=SC1090
+  . "$REPO_ROOT/.coolify.env"
+fi
+
+GIT_REMOTE=${GIT_REMOTE:-origin}
+COOLIFY_WEBHOOK=${COOLIFY_WEBHOOK:-}
+
+# Determine current branch
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "master")
+
+echo "[hooks] post-commit: pushing to $GIT_REMOTE/$CURRENT_BRANCH..."
+git push "$GIT_REMOTE" "$CURRENT_BRANCH"
+
+if [ -n "$COOLIFY_WEBHOOK" ]; then
+  echo "[hooks] post-commit: triggering Coolify webhook..."
+  # Best-effort non-blocking webhook call
+  curl -s -X POST -H "Content-Type: application/json" -d "{\"ref\": \"refs/heads/$CURRENT_BRANCH\"}" "$COOLIFY_WEBHOOK" >/dev/null 2>&1 || true
+  echo "[hooks] Coolify webhook triggered (if URL configured)."
+else
+  echo "[hooks] COOLIFY_WEBHOOK not set — skipping webhook trigger."
+fi
+
+exit 0

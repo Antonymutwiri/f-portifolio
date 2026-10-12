@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — Antony Mutwiri</title>
+  <link rel="shortcut icon" href="/assets/images/logo.png" type="image/png+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body id="top">
+
+  <canvas id="particles-canvas"></canvas>
+
+  <header class="header" data-header>
+    <div class="container">
+      <a href="index.html" class="logo">Antony Mutwiri</a>
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle menu">
+        <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
+        <ion-icon name="close-outline" class="close-icon"></ion-icon>
+      </button>
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li><a href="about.html" class="navbar-link">About</a></li>
+          <li><a href="portfolio.html" class="navbar-link active">Portfolio</a></li>
+          <li><a href="skills.html" class="navbar-link">Skills</a></li>
+          <li><a href="contact.html" class="navbar-link">Contact</a></li>
+          <li><a href="#" class="btn btn-primary" onclick="downloadCV()">Download CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section portfolio" id="portfolio">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Portfolio</span>
+          <h2 class="section-title">My Amazing <span class="gradient">Works</span></h2>
+          <p class="section-desc">A selection of projects I've worked on recently.</p>
+        </div>
+        
+        <div class="portfolio-grid">
+          <div class="portfolio-card reveal">
+            <div class="portfolio-card-bg" style="background-image: url('/assets/images/portfolio-1.jpg')"></div>
+            <div class="portfolio-card-overlay"></div>
+            <div class="portfolio-card-content">
+              <span class="portfolio-card-tag">Web Application</span>
+              <h3 class="portfolio-card-title">Web Application for Desiverse</h3>
+              <a href="https://atechssolutions.com" class="portfolio-card-link" target="_blank" rel="noopener noreferrer">
+                View Project <ion-icon name="arrow-forward"></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <div class="portfolio-card reveal reveal-delay-1">
+            <div class="portfolio-card-bg" style="background-image: url('/assets/images/portfolio-2.jpg')"></div>
+            <div class="portfolio-card-overlay"></div>
+            <div class="portfolio-card-content">
+              <span class="portfolio-coming-soon">COMING SOON</span>
+              <span class="portfolio-card-tag">Mobile Application</span>
+              <h3 class="portfolio-card-title">Mobile Application for Desiverse</h3>
+              <p class="portfolio-card-subtext">school bus tracking app</p>
+              <a href="#" class="portfolio-card-link">
+                View Project <ion-icon name="arrow-forward"></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <div class="portfolio-card reveal reveal-delay-2">
+            <div class="portfolio-card-bg" style="background-image: url('/assets/images/portfolio-3.jpg')"></div>
+            <div class="portfolio-card-overlay"></div>
+            <div class="portfolio-card-content">
+              <span class="portfolio-card-tag">WEB APPLICATION</span>
+              <h3 class="portfolio-card-title">Web Application for a client to manage farm expenses</h3>
+              <a href="https://farmrecords.atechssolutions.com" class="portfolio-card-link" target="_blank" rel="noopener noreferrer">
+                View Project <ion-icon name="arrow-forward"></ion-icon>
+              </a>
+            </div>
+          </div>
+
+          <div class="portfolio-card reveal reveal-delay-3">
+            <div class="portfolio-card-bg" style="background-image: url('/assets/images/portfolio-4.jpg')"></div>
+            <div class="portfolio-card-overlay"></div>
+            <div class="portfolio-card-content">
+              <span class="portfolio-card-tag">STARTUP</span>
+              <h3 class="portfolio-card-title">A seamless backup system</h3>
+              <a href="https://backupsystem.atechssolutions.com" class="portfolio-card-link" target="_blank" rel="noopener noreferrer">
+                View Project <ion-icon name="arrow-forward"></ion-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">Antony Mutwiri</div>
+      <p class="footer-copy">&copy; 2026 Powered by <a href="https://atechssolutions.com" class="copyright-link" target="_blank" rel="noopener noreferrer">Atechssolutions.com</a>. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#" class="footer-link">Terms</a>
+        <a href="#" class="footer-link">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" data-back-to-top aria-label="Back to top">
+    <ion-icon name="arrow-up"></ion-icon>
+  </button>
+
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

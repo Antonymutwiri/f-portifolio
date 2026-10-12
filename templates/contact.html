@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Antony Mutwiri</title>
+  <link rel="shortcut icon" href="/assets/images/logo.png" type="image/png+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body id="top">
+
+  <canvas id="particles-canvas"></canvas>
+
+  <header class="header" data-header>
+    <div class="container">
+      <a href="index.html" class="logo">Antony Mutwiri</a>
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle menu">
+        <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
+        <ion-icon name="close-outline" class="close-icon"></ion-icon>
+      </button>
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li><a href="about.html" class="navbar-link">About</a></li>
+          <li><a href="portfolio.html" class="navbar-link">Portfolio</a></li>
+          <li><a href="skills.html" class="navbar-link">Skills</a></li>
+          <li><a href="contact.html" class="navbar-link active">Contact</a></li>
+          <li><a href="#" class="btn btn-primary" onclick="downloadCV()">Download CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Contact</span>
+          <h2 class="section-title">Drop Me a <span class="gradient">Line</span></h2>
+          <p class="section-desc">Have a project in mind? Let's work together.</p>
+        </div>
+        
+        <div class="contact-wrapper">
+          <form id="contactForm" class="contact-form reveal">
+            <div class="form-group">
+              <input type="text" name="name" id="name" class="form-input" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" id="email" class="form-input" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <textarea name="message" id="message" class="form-input" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Send Message <ion-icon name="send"></ion-icon>
+            </button>
+          </form>
+          
+          <div class="contact-info-list reveal reveal-delay-2">
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <ion-icon name="location"></ion-icon>
+              </div>
+              <div>
+                <h3 class="contact-info-title">Location</h3>
+                <p class="contact-info-link">Nairobi, Kenya</p>
+              </div>
+            </div>
+            
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <ion-icon name="mail"></ion-icon>
+              </div>
+              <div>
+                <h3 class="contact-info-title">Email</h3>
+                <a href="mailto:antonymtwi@gmail.com" class="contact-info-link">atbssupport1@gmail.com</a>
+              </div>
+            </div>
+            
+            <div class="contact-info-item">
+              <div class="contact-info-icon">
+                <ion-icon name="call"></ion-icon>
+              </div>
+              <div>
+                <h3 class="contact-info-title">Phone</h3>
+                <a href="tel:+254742278301" class="contact-info-link">+254 782 001811</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">Antony Mutwiri</div>
+      <p class="footer-copy">&copy; 2026 Powered by <a href="https://atechssolutions.com" class="copyright-link" target="_blank" rel="noopener noreferrer">Atechssolutions.com</a>. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#" class="footer-link">Terms</a>
+        <a href="#" class="footer-link">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" data-back-to-top aria-label="Back to top">
+    <ion-icon name="arrow-up"></ion-icon>
+  </button>
+
+  <script src="/assets/js/script.js"></script>
+  <script>
+    // contact form submit handler
+    (function () {
+      const form = document.getElementById('contactForm');
+      if (!form) return;
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        const payload = { name, email, message };
+
+        // In production the frontend posts to the same origin at /api/contact
+        const url = '/api/contact';
+
+        try {
+          const res = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+
+          const data = await res.json();
+          if (res.ok && data.ok) {
+            alert('Message sent — thank you!');
+            form.reset();
+          } else {
+            alert('Failed to send message. Please try again later.');
+          }
+        } catch (err) {
+          console.error(err);
+          alert('Failed to send message. Please try again later.');
+        }
+      });
+    })();
+  </script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

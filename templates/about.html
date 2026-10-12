@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Antony Mutwiri</title>
+  <link rel="shortcut icon" href="/assets/images/logo.png" type="image/png+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700;800&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body id="top">
+
+  <canvas id="particles-canvas"></canvas>
+
+  <header class="header" data-header>
+    <div class="container">
+      <a href="index.html" class="logo">Antony Mutwiri</a>
+      <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle menu">
+        <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
+        <ion-icon name="close-outline" class="close-icon"></ion-icon>
+      </button>
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li><a href="about.html" class="navbar-link active">About</a></li>
+          <li><a href="portfolio.html" class="navbar-link">Portfolio</a></li>
+          <li><a href="skills.html" class="navbar-link">Skills</a></li>
+          <li><a href="contact.html" class="navbar-link">Contact</a></li>
+          <li><a href="#" class="btn btn-primary" onclick="downloadCV()">Download CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="about-image-wrap reveal">
+          <div class="about-image-main">
+            <img src="/assets/images/official 1.jpg" alt="Antony Mutwiri">
+          </div>
+          <div class="about-image-sub">
+            <img src="/assets/images/campus 2.jpg" alt="Campus Life">
+          </div>
+        </div>
+        <div class="about-content reveal reveal-delay-2">
+          <div class="section-header">
+            <span class="section-label">About Me</span>
+            <h2 class="section-title">I Develop Applications <span class="gradient">That Help People</span></h2>
+          </div>
+          <p class="about-text">
+            Passionate about creating solutions that make life easier, I design and develop 
+            web and mobile applications that provide real value to users and businesses alike.
+          </p>
+          <p class="about-text">
+            Driven by a desire to simplify everyday challenges, I focus on designing and developing 
+            innovative web and mobile applications that deliver practical value and enhance user experiences.
+          </p>
+          <div class="about-features">
+            <div class="about-feature">
+              <ion-icon name="checkmark-circle"></ion-icon>
+              <span>Problem Solver</span>
+            </div>
+            <div class="about-feature">
+              <ion-icon name="checkmark-circle"></ion-icon>
+              <span>Creative Thinker</span>
+            </div>
+            <div class="about-feature">
+              <ion-icon name="checkmark-circle"></ion-icon>
+              <span>Fast Learner</span>
+            </div>
+            <div class="about-feature">
+              <ion-icon name="checkmark-circle"></ion-icon>
+              <span>Team Player</span>
+            </div>
+          </div>
+          <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-brand">Antony Mutwiri</div>
+      <p class="footer-copy">&copy; 2026 Powered by <a href="https://atechssolutions.com" class="copyright-link" target="_blank" rel="noopener noreferrer">Atechssolutions.com</a>. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#" class="footer-link">Terms</a>
+        <a href="#" class="footer-link">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" data-back-to-top aria-label="Back to top">
+    <ion-icon name="arrow-up"></ion-icon>
+  </button>
+
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
